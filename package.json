@@ -1,6 +1,7 @@
 {
   "name": "firstback",
   "version": "1.0.0",
+   "type":"module",
   "description": "a basic app to deploy",
   "keywords": [
     "node",
@@ -8,7 +9,7 @@
   ],
   "license": "ISC",
   "author": "abhay singh",
-  "type": "commonjs",
+  
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -1,7 +1,14 @@
 //console.log("abhay singh")
-const express = require('express')
-require('dotenv').config();
+//const express = require('express')
+import express from "express"
+//require('dotenv').config();
+
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 //import express from "express"
+//const port = process.env.PORT || 4000
 const port = 4000
 const app = express()
 app.get('/',(req,res)=> {
@@ -12,8 +19,45 @@ app.get('/twitter',(req,res)=>{
   res.send('abhay@twitter.com')
 });
 
-app.listen(process.env.PORT,()=>{
-  console.log(`app is listening on the port ${port}`)
+//app.listen(process.env.PORT,()=>{
+ // console.log(`app is listening on the port ${port}`)
+//});
+
+// get a list of 5 jokes
+app.get('/api/jokes',(req,res)=>{
+  const jokes = [
+    {
+      id: 1,
+      title:'A joke',
+      content: 'this is a joke',
+
+    },
+    {
+      id: 2,
+      title: 'Another joke',
+      content: 'this is another joke'
+    },
+    {
+      id: 3,
+      title: 'Yet another joke',
+      content: 'this is yet another joke'
+    },
+    {
+      id: 4,
+      title: '4 another joke',
+      content: 'this is 4 another joke'
+    },
+    {
+      id: 5,
+      title: '5 another joke',
+      content: 'this is 5 another joke'
+    }
+  ]
+  res.json(jokes)
+})
+
+app.listen(port,()=>{
+  console.log(`serve at https/localhost:${port}`)
 });
 
 app.get('/login',(req,res)=>{
